@@ -10,14 +10,12 @@ wezterm.on('gui-startup', function(window)
   local gui_window = window:gui_window();
   gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
 end)
+
 config.hide_tab_bar_if_only_one_tab = true
-
 config.window_background_opacity = 0.85
-
 config.audible_bell = "Disabled"
-
-
-
+config.font = wezterm.font('JetBrains Mono', { italic = false })
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- For example, changing the color scheme:
 config.color_scheme = 'Catppuccin Mocha'

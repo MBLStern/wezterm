@@ -18,6 +18,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = background_opacity 
 config.audible_bell = "Disabled"
 config.font = wezterm.font('JetBrains Mono', { italic = false })
+config.warn_about_missing_glyphs = false
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- For example, changing the color scheme:

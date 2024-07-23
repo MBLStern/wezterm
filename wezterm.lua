@@ -5,6 +5,9 @@ local mux = wezterm.mux
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
+
+config.leader = { key = 'n', mods = 'CTRL', timeout_milliseconds = 1500 }
+
 wezterm.on('gui-startup', function(window)
     local tab, pane, window = mux.spawn_window(cmd or {})
     local gui_window = window:gui_window();
@@ -54,36 +57,36 @@ config.keys = {
     -- horizontal split
     {
         key = 'n',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
 
     -- close active pane
     {
         key = 'q',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.CloseCurrentPane { confirm = true }
     },
 
     -- change active pane in direction
     {
         key = 'k',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.ActivatePaneDirection('Up')
     },
     {
         key = 'j',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.ActivatePaneDirection('Down')
     },
     {
         key = 'l',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.ActivatePaneDirection('Right')
     },
     {
         key = 'h',
-        mods = 'CTRL',
+        mods = 'LEADER',
         action = wezterm.action.ActivatePaneDirection('Left')
     }
 }

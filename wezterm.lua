@@ -61,6 +61,13 @@ config.keys = {
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
 
+    -- vertical split
+    {
+        key = 'v',
+        mods = 'LEADER',
+        action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
+
     -- close active pane
     {
         key = 'q',

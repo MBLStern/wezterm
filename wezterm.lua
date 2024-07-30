@@ -75,6 +75,20 @@ config.keys = {
         action = wezterm.action.CloseCurrentPane { confirm = true }
     },
 
+    {
+        key = 'o',
+        mods = 'LEADER',
+        action = wezterm.action_callback(function(win, pane)
+            local tab = win:active_tab()
+            for _, p in ipairs(tab:panes()) do
+                if p:pane_id() ~= pane:pane_id() then
+                    p:activate()
+                    win:perform_action(wezterm.action.CloseCurrentPane { confirm = false }, p)
+                end
+            end
+        end),
+    },
+
     -- change active pane in direction
     {
         key = 'k',
